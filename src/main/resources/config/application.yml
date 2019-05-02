@@ -19,15 +19,15 @@ eureka:
         enabled: true
         healthcheck:
             enabled: true
-        fetch-registry: true
-        register-with-eureka: true
-        instance-info-replication-interval-seconds: 10
-        registry-fetch-interval-seconds: 10
+        fetch-registry: false
+        register-with-eureka: false
+        instance-info-replication-interval-seconds: 30
+        registry-fetch-interval-seconds: 90
     instance:
         appname: library
         instanceId: library:${spring.application.instance-id:${random.value}}
-        lease-renewal-interval-in-seconds: 5
-        lease-expiration-duration-in-seconds: 10
+        lease-renewal-interval-in-seconds: 30
+        lease-expiration-duration-in-seconds: 90
         status-page-url-path: ${management.endpoints.web.base-path}/info
         health-check-url-path: ${management.endpoints.web.base-path}/health
         metadata-map:

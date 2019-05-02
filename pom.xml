@@ -19,6 +19,7 @@
     <!-- jhipster-needle-distribution-management -->
 
     <properties>
+        <start-class>org.thibaut.library.LibraryApp</start-class>
         <!-- Build properties -->
         <maven.version>3.0.0</maven.version>
         <java.version>1.8</java.version>
@@ -674,19 +675,19 @@
                         </execution>
                     </executions>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven-surefire-plugin.version}</version>
-                    <configuration>
-                        <!-- Force alphabetical order to have a reproducible build -->
-                        <runOrder>alphabetical</runOrder>
-                        <!-- Fixes a bug which will be solved in next version after 2.22.1 then this can be removed -->
-                        <!-- see: https://issues.apache.org/jira/browse/SUREFIRE-1588 -->
-                        <useSystemClassLoader>false</useSystemClassLoader>
-                        <outputDirectory>${sonar.junit.reportsPath}</outputDirectory>
-                    </configuration>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                    <version>${maven-surefire-plugin.version}</version>-->
+<!--                    <configuration>-->
+<!--                        &lt;!&ndash; Force alphabetical order to have a reproducible build &ndash;&gt;-->
+<!--                        <runOrder>alphabetical</runOrder>-->
+<!--                        &lt;!&ndash; Fixes a bug which will be solved in next version after 2.22.1 then this can be removed &ndash;&gt;-->
+<!--                        &lt;!&ndash; see: https://issues.apache.org/jira/browse/SUREFIRE-1588 &ndash;&gt;-->
+<!--                        <useSystemClassLoader>false</useSystemClassLoader>-->
+<!--                        <outputDirectory>${sonar.junit.reportsPath}</outputDirectory>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
