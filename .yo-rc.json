@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "applicationType": "gateway",
+    "gitCompany": "",
+    "baseName": "library",
+    "packageName": "org.thibaut.library",
+    "packageFolder": "org/thibaut/library",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.8.2",
+    "jwtSecretKey": "OWVhNTc0YjM5YWUxMmFhYjIwNDgzNzhmOTY3YWQwYTcxNzg3YzhmOTBhOTAzZGYzZWE5Zjc5ZDg3ODBjZWU4OGI3YjM5NzA2NjcxM2NkMDZjOGE2OGIxMWM1Mjc0YWZjMjViODI1Yzg0NDhjMjFjMWI3YjljNGQ0ZjNlNDNiMzk=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "thibaut54",
+  "repository-name": "library"
+}
