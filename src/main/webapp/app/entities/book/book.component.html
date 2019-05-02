@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span>Books</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-book" [routerLink]="['/book/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Book
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="books">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Title</span></th>
+            <th><span>Language</span></th>
+            <th><span>Isbn</span></th>
+            <th><span>Publication Date</span></th>
+            <th><span>Number Of Pages</span></th>
+            <th><span>Author</span></th>
+            <th><span>Category</span></th>
+            <th><span>Library</span></th>
+            <th><span>Editor</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of books ;trackBy: trackId">
+                <td><a [routerLink]="['/book', book.id, 'view' ]">{{book.id}}</a></td>
+                <td>{{book.title}}</td>
+                <td>{{book.language}}</td>
+                <td>{{book.isbn}}</td>
+                <td>{{book.publicationDate | date:'mediumDate'}}</td>
+                <td>{{book.numberOfPages}}</td>
+                <td>
+                    <span *ngFor="let author of book.authors; let last = last">
+                            <a class="form-control-static" [routerLink]="['../author', author?.id, 'view' ]">{{author.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let category of book.categories; let last = last">
+                            <a class="form-control-static" [routerLink]="['../category', category?.id, 'view' ]">{{category.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let library of book.libraries; let last = last">
+                            <a class="form-control-static" [routerLink]="['../library', library?.id, 'view' ]">{{library.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <div *ngIf="book.editor">
+                        <a [routerLink]="['../editor', book.editor?.id, 'view' ]" >{{book.editor?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/book', book.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/book', book.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'book', { outlets: { popup: book.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
